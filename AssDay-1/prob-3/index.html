@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+  // Define the JSX element to be rendered
+      let rootElement = document.getElementById("root");
+      let element = (
+        <>
+        {/*Outer div with class "main1" and center alignment */} 
+        <div className="main1" style={{ margin: "100px auto", textAlign: "center" }}>
+        {  /* Paragraph describing */  }
+          <p>React is a javascript library</p>
+          {/* Inner div with class "main2" and additional styling*/} 
+          <div
+            className="main2"
+            style={{
+              border: "2px solid black",
+              padding: "10px",
+              borderRadius: "15px",
+              backgroundColor: "aqua",
+              width: "20%",
+              margin: "auto", textAlign: "center" 
+            }}
+          >
+            {/*Button Functionality */} 
+            <p>Click the below button to alert</p>
+            {/*Button Functionality */} 
+            <button onClick={() => alert("Hello")}>Alert Hello</button>
+          </div>
+        </div>
+      </>
+      );
+
+    // Render the App component inside the div with the id 'root':
+      ReactDOM.createRoot(rootElement).render(element);
+    </script>
+  </body>
+</html>
