@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List Display</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const fruits = ["Apple", "Mango", "Banana", "Kiwi", "Orange"];
+    const vegetables = ["Potato", "Tomato", "Cabbage", "Onion"];
+
+    function DisplayList({ items }) {
+      return (
+        <ul>
+          {items.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <h2>Fruits</h2>
+          <DisplayList items={fruits} />
+
+          <h2>Vegetables</h2>
+          <DisplayList items={vegetables} />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
