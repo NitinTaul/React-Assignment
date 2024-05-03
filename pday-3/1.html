@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JSX and Babel</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    let theme = "dark"; // Default theme
+
+    function App() {
+      const textDark = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
+      const textLight = "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...";
+
+      const textStyle = {
+        fontSize: "48px",
+        backgroundColor: theme === "dark" ? "black" : "white",
+        color: theme === "dark" ? "white" : "black",
+      };
+
+      const handleThemeChange = () => {
+        theme = theme === "dark" ? "light" : "dark";
+        renderApp();
+      };
+
+      return (
+        <div style={textStyle}>
+          {theme === "dark" ? textDark : textLight}
+          <button onClick={handleThemeChange}>Toggle Theme</button>
+        </div>
+      );
+    }
+
+    function renderApp() {
+      ReactDOM.render(<App />, document.getElementById('root'));
+    }
+
+    renderApp(); 
+  </script>
+</body>
+</html>

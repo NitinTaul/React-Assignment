@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Gallery Component implementation
+    function Gallery({ children }) {
+      return (
+        <div style={{margin:"auto", textAlign:"center",width:"100%",hight:"40px", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap:"30px" }}>
+          {children}
+        </div>
+      );
+    }
+
+    // Example usage
+    ReactDOM.render(
+      <Gallery>
+        <img src="https://imgs.search.brave.com/1m9B2dZOWLf9L4-Dv6Q41_NXmB-3r-MZ74FUXbzOVNk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQx/ODc3NjI2NS9waG90/by9nYWxsb3Bpbmct/d2lsZC1ob3JzZXMt/aW4tdGhlLXdpbGRl/cm5lc3Mud2VicD9i/PTEmcz0xNzA2Njdh/Jnc9MCZrPTIwJmM9/OFM4dElQNGFPYktv/bUVqa28xOGdEcFFa/ajhXMnk5RF85QjVB/LWpnWkN5VT0" alt="Image 1" />
+        <img src="https://imgs.search.brave.com/QdA-0diGAukL9JA3kQziQbDMX8zlvIjfsk5KKTGVVts/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM5/MTQ2NzE3MC9waG90/by9wcm91ZC1jYXJp/Ym91LndlYnA_Yj0x/JnM9MTcwNjY3YSZ3/PTAmaz0yMCZjPXNN/d2tzX3JCUzAwYWIz/cy04TjR6dklRSldu/YmhfMkc4SGNsVzhT/UDZfWVE9" alt="Image 2" />
+        <img src="https://imgs.search.brave.com/CWGm_xUNOTnOQKb-tBbFDybV2KPBhvbHU5zEGlQqfjQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM3/MjAxODU5L3Bob3Rv/L2FuaW1hbC1odW1v/dXIud2VicD9iPTEm/cz0xNzA2NjdhJnc9/MCZrPTIwJmM9bk0w/S1lLMFF2cDMzMXgt/dUpORlVZU0RHbDRJ/MHY2Umhrd3Y0OEpy/S0Uydz0" alt="Image 3" />
+        {/* Additional images can be included as needed */}
+      </Gallery>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>

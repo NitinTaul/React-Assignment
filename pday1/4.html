@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+
+function foo() {
+  return 'world';
+}
+
+function buttonClicked() {
+  alert('Button clicked!');
+}
+
+let element = (
+  <div>
+    <h1>List of Fruits</h1>
+    <ol>
+      <li>Apple</li>
+      <li>Mango</li>
+      <li>Banana</li>
+      <li>Kiwi</li>
+      <li>Orange</li>
+    </ol>
+    <img src="https://via.placeholder.com/150" />
+    <br />
+    <hr />
+    <p className="foo">
+      Hello I will put some variable here {foo()}
+    </p>
+    <button className="btn" onClick={buttonClicked}>
+      Click Me!
+    </button>
+  </div>
+);
+
+ReactDOM.render(element, document.body);
+
+</script>
+</html> 
