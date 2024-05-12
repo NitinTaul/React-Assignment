@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+      body {
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .cont {
+        height: 180px;
+        width: 180px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      input {
+        margin-top: 30px;
+        padding: 5px 12px;
+        border-radius: 5px;
+        font-size: 0.6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+function App(){
+  const [color,setcolor]= React.useState("");
+  const handleSetColor = (e)=>{
+    setcolor(e.target.value)
+  }
+  return(
+    <>
+    <input type="text"value={color}placeholder="Enter Hex color code"onChange={handleSetColor}/>
+    {color.length!==4 && color.length!==7 &&(<p>Please Enter Valid Hex Color code</p>)}
+    <div className="cont" style={{backgroundColor : color.length === 4 || color.length === 7 ? color : console.log("Please Enter Valid Hex Color code")}}></div>
+    </>
+  )
+}
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</html>
+
+
+
